@@ -11,7 +11,7 @@ gem 'sqlite3'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
@@ -27,7 +27,9 @@ gem 'sqlite3'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  gem "rspec-rails"
-  gem "cucumber-rails"
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
   gem 'webrat'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
