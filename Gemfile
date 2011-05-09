@@ -36,3 +36,5 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
 end
+gem "bcrypt-ruby", :require => "bcrypt"
+gem "mocha", :group => :test
