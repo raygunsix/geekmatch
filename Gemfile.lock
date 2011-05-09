@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.0.7)
     activesupport (3.0.7)
     arel (2.0.9)
+    bcrypt-ruby (2.1.4)
     builder (2.1.2)
     capistrano (2.6.0)
       highline
@@ -81,6 +82,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.12)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -146,11 +148,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   capistrano
   capybara
   cucumber-rails
   database_cleaner
   launchy
+  mocha
   nifty-generators
   rails (= 3.0.7)
   rspec-rails
