@@ -3,7 +3,7 @@ Feature: Authentication
   As a geek
   I want to be able to log in
 
-Scenario: Login
+Scenario: Successful Login
   Given I am not logged in
   When I go to the signup page
   And I fill in "user_username" with "user"
