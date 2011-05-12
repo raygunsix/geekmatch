@@ -1,13 +1,14 @@
 # language: en
-Feature: geek submits a profile
+Feature: Profile
+  In order to meet a co-founder
   As a geek
   I want to submit my profile
-  So that I can meet a co-founder
 
 Scenario: Successful submission
-  Given I have "0" profiles
-  When I post a profile
-  Then I should see that I have "1" profile
-
-#Scenario: Geek forgets to enter email 
-
+  Given that I am logged in
+  When I go to the profile page
+  And I fill in "user_description" with "I'm a rails developer who is awesome."
+  And I fill in "user_skills" with "rails devops cucumber"
+  And I fill in "user_ideas" with "real_estate cloud_manufacturing"
+  And I press "Save"
+  Then I should see "Thank you. Your profile has been saved successfully."
