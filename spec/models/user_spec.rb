@@ -81,7 +81,8 @@ describe User do
   end
   
   it "should allow a description to be saved" do
-     user = new_user().save!
-     User.new.should be_valid
+    user = new_user
+    user.save!
+    user.description.should_not be_nil
   end
 end
