@@ -1,4 +1,4 @@
-Geekmatchr::Application.routes.draw do
+Geekmatch::Application.routes.draw do
   get "welcome/index"
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
