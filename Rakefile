@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Geekmatchr::Application.load_tasks
+Geekmatch::Application.load_tasks
