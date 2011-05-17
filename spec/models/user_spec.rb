@@ -7,6 +7,7 @@ describe User do
     attributes[:password] ||= 'abc123'
     attributes[:password_confirmation] ||= attributes[:password]
     attributes[:description] ||= 'I am a foo developer located in Vancouver'
+    attributes[:skills] ||= 'rails css jquery sql mongodb'
     User.new(attributes)
   end
 
@@ -84,5 +85,11 @@ describe User do
     user = new_user
     user.save!
     user.description.should_not be_nil
+  end
+  
+  it "should allow skills to be saved" do
+    user = new_user
+    user.save!
+    user.skills.should_not be_nil
   end
 end
