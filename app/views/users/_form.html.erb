@@ -24,5 +24,9 @@
     <%= f.label :skills, "Skills" %><br />
     <%= f.text_area :skills %>
   </p>
+  <p>
+    <%= f.label :ideas, "Ideas" %><br />
+    <%= f.text_area :ideas %>
+  </p>
   <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>
 <% end %>
