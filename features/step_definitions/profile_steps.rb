@@ -13,4 +13,9 @@ Given /^that I am logged in$/ do
   click_button("Log in")
 end
 
+Given /^that I am not logged in$/ do
+  visit("/logout")
+end
+
+
 
