@@ -4,6 +4,11 @@ describe UsersController do
   fixtures :all
   render_views
 
+  it "show action should find user and return object" do
+    get :show, :id => User.first
+    response.should render_template(:show)
+  end
+
   it "new action should render new template" do
     get :new
     response.should render_template(:new)

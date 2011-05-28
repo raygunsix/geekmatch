@@ -15,6 +15,6 @@ Scenario: Successful submission
 
 Scenario: View profile
   Given that I am logged in
-  When I go to test's profile page 
-  Then I should see "Test's Profile"
+  When I go to the current user's profile page 
+  Then I should see "Profile"
   

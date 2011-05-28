@@ -18,7 +18,7 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
 
     when /^(.*)'s profile page$/i
-      user_path(User.find(:all, :conditions => ["username = $1"]))
+      user_path(User.first) #find(:all, :conditions => ["username = $1"]))
 
     else
       begin
