@@ -14,7 +14,7 @@ Scenario: Successful submission
   Then I should see "Your profile has been updated."
 
 Scenario: View profile
-  Given that I am not logged in
-  When I go to the profile page for user "Chris Reid" 
-  Then I should see "Chris Reid's Profile"
+  Given that I am logged in
+  When I go to the user page for "Test" 
+  Then I should see "Test's Profile"
   
