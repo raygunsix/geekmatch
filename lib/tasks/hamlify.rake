@@ -26,7 +26,7 @@ namespace :hamlify do
         fn.write(haml_string) unless(haml_string.empty?)
         fn.close
         #get rid of the erb file
-        File.delete(file_name)
+        #File.delete(file_name)
       end
     end
   end
