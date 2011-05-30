@@ -1,3 +1,6 @@
+# copied from:
+# http://webdeveloper.fm/post/3978016796/rake-task-for-converting-erb-to-haml-in-rails-3
+
 #include the HTML haml class
 require 'haml/html'
 namespace :hamlify do
