@@ -26,6 +26,7 @@ gem 'capistrano'
 gem 'nifty-generators'
 gem 'haml'
 gem 'hpricot'
+gem 'simple-navigation'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
