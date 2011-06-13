@@ -1,0 +1,9 @@
+<p>Profiles</p>
+
+<p>
+<% @users.each do |user| %>
+  Username:<%= user.username %></br>
+  Skills: <%= user.skills %></br>
+  Ideas: <%= user.ideas %>
+<% end %>
+</p>

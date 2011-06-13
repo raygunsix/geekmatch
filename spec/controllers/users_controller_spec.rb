@@ -4,6 +4,11 @@ describe UsersController do
   fixtures :all
   render_views
 
+  it "index action should return all objects" do
+    get :index
+    response.should render_template(:index)
+  end
+
   it "show action should find user and return object" do
     get :show, :id => User.first
     response.should render_template(:show)
