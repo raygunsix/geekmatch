@@ -73,3 +73,17 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+/* my styles */
+
+#nav {
+  margin-right: 10px;
+}
+
+#nav-menu {
+  float: right;
+}
+
+#selected {
+  font-weight: bold;	
+}

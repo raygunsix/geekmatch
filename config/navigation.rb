@@ -27,7 +27,11 @@ SimpleNavigation::Configuration.run do |navigation|
 
   # Define the primary navigation
   navigation.items do |primary|
-    primary.item :users, 'Users', users_path
+    primary.item :users, 'Users', users_path, :id => 'nav'
+    primary.item :session, 'Login', login_path, :id => 'nav', :unless => Proc.new { logged_in? }
+    primary.item :session, 'Logout', logout_path, :id => 'nav', :if => Proc.new { current_user }
+    
+    primary.dom_id = 'nav-menu'
     
     # Add an item to the primary navigation. The following params apply:
     # key - a symbol which uniquely defines your navigation item in the scope of the primary_navigation
