@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="container">
-	  <%= render_navigation :renderer => :links %>
+	  <%= render_navigation :renderer => :links %></br>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
