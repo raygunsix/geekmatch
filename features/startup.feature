@@ -7,6 +7,7 @@ Feature: Startup
 Scenario: Successful submission
   Given that I am logged in
   When I go to the new startup page
+  And I fill in "startup_title" with "Video Website"
   And I fill in "startup_city" with "Vancouver"
   And I fill in "startup_description" with "It's a video site that uses RSS and GPS to do messaging in a portal"
   And I fill in "startup_skills" with "rails devops cucumber"
