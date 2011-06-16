@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @startup.title %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @startup.city %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @startup.description %>
+</p>
+
+<p>
+  <b>Skills:</b>
+  <%= @startup.skills %>
+</p>
+
+
+<%= link_to 'Edit', edit_startup_path(@startup) %> |
+<%= link_to 'Back', startups_path %>
