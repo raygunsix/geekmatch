@@ -1,4 +1,6 @@
 class StartupsController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
+  
   # GET /startups
   # GET /startups.xml
   def index
