@@ -13,3 +13,8 @@ Scenario: Successful submission
   And I fill in "startup_skills" with "rails devops cucumber"
   And I press "Create Startup"
   Then I should see "Startup was successfully created."
+
+Scenario: View all startups
+  Given that I am logged in
+  When I go to the startups page 
+  Then I should see "Listing startups"
