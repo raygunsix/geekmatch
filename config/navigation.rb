@@ -27,6 +27,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
   # Define the primary navigation
   navigation.items do |primary|
+    primary.item :startup, 'Startups', startups_path, :id => 'nav'
     primary.item :user, 'Profiles', users_path, :id => 'nav'
     primary.item :user, 'My Profile', edit_current_user_path, :id => 'nav', :if => Proc.new { current_user }
     primary.item :session, 'Login', login_path, :id => 'nav', :unless => Proc.new { logged_in? }
