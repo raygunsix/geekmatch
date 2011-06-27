@@ -11,5 +11,5 @@ Scenario: Successful submission
   And I fill in "startup_city" with "Vancouver"
   And I fill in "startup_description" with "It's a video site that uses RSS and GPS to do messaging in a portal"
   And I fill in "startup_skills" with "rails devops cucumber"
-  And I press "Update"
-  Then I should see "Your startup has been added."
+  And I press "Create Startup"
+  Then I should see "Startup was successfully created."
