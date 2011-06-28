@@ -1,4 +1,5 @@
 # language: en
+
 Feature: Startup
   In order to meet collaborators
   As a geek
@@ -15,6 +16,6 @@ Scenario: Successful submission
   Then I should see "Startup was successfully created."
 
 Scenario: View all startups
-  Given that I am logged in
+  Given that I am not logged in
   When I go to the startups page 
   Then I should see "Listing startups"

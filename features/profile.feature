@@ -19,6 +19,6 @@ Scenario: View profile
   Then I should see "Profile"
  
 Scenario: View all profiles
-  Given that I am logged in
+  Given that I am not logged in
   When I go to the users page 
   Then I should see "Profiles"
