@@ -37,6 +37,7 @@ describe StartupsController do
     Startup.any_instance.stubs(:id).returns(1)
     post :create
     response.should redirect_to(startup_path(1))
+    flash[:notice].should_not be_nil
   end
    
   it "edit action should redirect when not logged in" do

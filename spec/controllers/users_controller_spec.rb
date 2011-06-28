@@ -30,6 +30,7 @@ describe UsersController do
     post :create
     response.should redirect_to(root_url)
     session['user_id'].should == assigns['user'].id
+    flash[:notice].should_not be_nil
   end
 
   it "edit action should redirect when not logged in" do
@@ -60,5 +61,6 @@ describe UsersController do
     User.any_instance.stubs(:valid?).returns(true)
     put :update, :id => "ignored"
     response.should redirect_to(root_url)
+    flash[:notice].should_not be_nil
   end
 end
