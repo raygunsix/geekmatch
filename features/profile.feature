@@ -7,9 +7,10 @@ Feature: Profile
 Scenario: Successful submission
   Given that I am logged in
   When I go to the edit current user page
-  And I fill in "user_description" with "I'm a rails developer who is awesome."
-  And I fill in "user_skills" with "rails devops cucumber"
-  And I fill in "user_ideas" with "real_estate cloud_manufacturing"
+  When I fill in the following:
+    | Description | I'm a rails developer who is awesome. |
+    | Ideas       | real_estate cloud_manufacturing       |
+    | Skills      | rails devops cucumber                 |
   And I press "Update"
   Then I should see "Your profile has been updated."
 
