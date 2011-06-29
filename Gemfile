@@ -38,6 +38,11 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'mocha'
+  gem 'ZenTest'
+  gem 'autotest-rails'
+  gem 'autotest-growl'
+  gem 'autotest-fsevent'
 end
 gem "bcrypt-ruby", :require => "bcrypt"
-gem "mocha", :group => :test
+#gem "mocha", :group => :test

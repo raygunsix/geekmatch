@@ -1,0 +1,13 @@
+# Run by doing: bundle exec autotest
+# Source from:
+# http://rbudiharso.wordpress.com/2011/04/19/rails-3-unit-test-and-autotest/
+
+require "ZenTest"
+require "autotest/rails"
+require "autotest/growl"
+require "autotest/fsevent"
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .svn .hg .DS_Store ._* vendor tmp log doc config .rvmrc Gemfile .autotest README Rakefile}.each do |exception|
+    autotest.add_exception(exception)
+  end
+end
