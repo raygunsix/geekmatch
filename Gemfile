@@ -40,6 +40,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'mocha'
+  gem 'factory_girl_rails'
   gem 'ZenTest'
   gem 'autotest-rails'
   gem 'autotest-growl'
