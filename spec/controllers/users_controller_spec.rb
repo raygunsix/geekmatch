@@ -1,8 +1,10 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe UsersController do
-  fixtures :all
-  render_views
+
+  before(:each) do
+    @user = Factory.build(:user)
+  end
 
   it "index action should return all objects" do
     get :index
@@ -10,7 +12,8 @@ describe UsersController do
   end
 
   it "show action should find user and return object" do
-    get :show, :id => User.first
+    @user.save
+    get :show, :id => @user.id
     response.should render_template(:show)
   end
 
@@ -20,14 +23,16 @@ describe UsersController do
   end
 
   it "create action should render new template when model is invalid" do
-    User.any_instance.stubs(:valid?).returns(false)
     post :create
     response.should render_template(:new)
   end
 
   it "create action should redirect when model is valid" do
-    User.any_instance.stubs(:valid?).returns(true)
-    post :create
+    post :create,
+      :user => {:username => @user.username,
+                :email => @user.email,
+                :password => @user.password,
+                :password_confirmation => @user.password} 
     response.should redirect_to(root_url)
     session['user_id'].should == assigns['user'].id
     flash[:notice].should_not be_nil
@@ -39,7 +44,7 @@ describe UsersController do
   end
 
   it "edit action should render edit template" do
-    @controller.stubs(:current_user).returns(User.first)
+    @controller.stubs(:current_user).returns(@user)
     get :edit, :id => "ignored"
     response.should render_template(:edit)
   end
@@ -50,17 +55,22 @@ describe UsersController do
   end
 
   it "update action should render edit template when user is invalid" do
-    @controller.stubs(:current_user).returns(User.first)
-    User.any_instance.stubs(:valid?).returns(false)
-    put :update, :id => "ignored"
+    @controller.stubs(:current_user).returns(@user)
+    @user.stubs(:valid?).returns(false)
+    put :update, :id => "ignored" #@user.id
     response.should render_template(:edit)
   end
-
+  
   it "update action should redirect when user is valid" do
-    @controller.stubs(:current_user).returns(User.first)
-    User.any_instance.stubs(:valid?).returns(true)
+    @controller.stubs(:current_user).returns(@user)
+    @user.stubs(:valid?).returns(true)
     put :update, :id => "ignored"
     response.should redirect_to(root_url)
     flash[:notice].should_not be_nil
   end
+  
+  after(:each) do
+    @user.delete
+  end
+  
 end
