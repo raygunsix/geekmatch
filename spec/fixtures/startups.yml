@@ -1,16 +1,16 @@
 #
-foo:
-  id: 1
-  title: fooco
-  city: foocity
-  description: 'Discount real estate website' 
-  skills: rails
-  user_id: 1
-
-bar:
-  id: 2    
-  title: barco
-  city: barcity
-  description: 'micro loans provider'
-  skills: php
-  user_id: 2
+# foo:
+#   id: 1
+#   title: fooco
+#   city: foocity
+#   description: 'Discount real estate website' 
+#   skills: rails
+#   user_id: 1
+# 
+# bar:
+#   id: 2    
+#   title: barco
+#   city: barcity
+#   description: 'micro loans provider'
+#   skills: php
+#   user_id: 2
