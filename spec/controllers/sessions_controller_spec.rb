@@ -1,8 +1,10 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'spec_helper'
 
 describe SessionsController do
-  fixtures :all
-  render_views
+
+  before(:each) do
+    @user = Factory.build(:user)
+  end
 
   it "new action should render new template" do
     get :new
@@ -17,9 +19,10 @@ describe SessionsController do
   end
 
   it "create action should redirect when authentication is valid" do
-    User.stubs(:authenticate).returns(User.first)
+    @user.save
+    User.stubs(:authenticate).returns(@user)
     post :create
     response.should redirect_to(root_url)
-    session['user_id'].should == User.first.id
+    session['user_id'].should == @user.id
   end
 end
