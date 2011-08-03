@@ -49,10 +49,10 @@ describe User do
     @user.should have_at_least(1).error_on(:password)
   end
   
-    it "should require matching password confirmation" do
-      @user.password_confirmation = 'nonmatching'
-      @user.should have(1).error_on(:password)
-    end
+  it "should require matching password confirmation" do
+    @user.password_confirmation = 'nonmatching'
+    @user.should have(1).error_on(:password)
+  end
      
   it "should generate password hash and salt on create" do
     @user.save!
@@ -70,16 +70,6 @@ describe User do
     User.authenticate('foo@bar.com', 'secret').should == @user
   end
   
-  it "should not authenticate bad username" do
-    @user.save!
-    User.authenticate('nonexisting', 'secret').should be_nil
-  end
-  
-  it "should not authenticate bad password" do
-    @user.save!
-    User.authenticate('foobar', 'badpassword').should be_nil
-  end
-  
   it "should allow a description to be saved" do
     @user.save!
     @user.description.should_not be_nil
@@ -93,10 +83,6 @@ describe User do
   it "should allow ideas to be saved" do
     @user.save!
     @user.ideas.should_not be_nil
-  end
-
-  after(:each) do
-    @user.delete
   end
 
 end
