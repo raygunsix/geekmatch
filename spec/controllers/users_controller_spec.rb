@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'spec_helper'
 
 describe UsersController do
 
@@ -67,10 +67,6 @@ describe UsersController do
     put :update, :id => "ignored"
     response.should redirect_to(root_url)
     flash[:notice].should_not be_nil
-  end
-  
-  after(:each) do
-    @user.delete
   end
   
 end
