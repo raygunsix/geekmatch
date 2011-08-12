@@ -1,6 +1,8 @@
 Geekmatch::Application.routes.draw do
   resources :startups
 
+  match "/auth/:provider/callback" => "sessions#create" 
+
   get "welcome/index"
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
