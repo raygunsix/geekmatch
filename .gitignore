@@ -2,4 +2,4 @@
 db/*.sqlite3
 log/*.log
 tmp/
-config/api_keys.yml
+config/local_env.rb
