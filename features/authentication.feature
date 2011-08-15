@@ -3,12 +3,9 @@ Feature: Authentication
   As a geek
   I want to be able to log in
 
+@omniauth_test
 Scenario: Successful Login
-  Given I am not logged in
-  When I go to the signup page
-  And I fill in "user_username" with "user"
-  And I fill in "user_email" with "user@gmail.com"
-  And I fill in "user_password" with "passwd"
-  And I fill in "user_password_confirmation" with "passwd"
-  And I press "Sign up"
-  Then I should see "You are now logged in."
+  Given that I am not logged in
+  When I go to the login page
+  And I log in with "Twitter"
+  Then I should see "Signed in!"
